@@ -14,7 +14,7 @@ RUN mkdir -p /var/run/sshd /var/log/supervisor
 RUN rm /etc/motd
 ADD https://raw.githubusercontent.com/jeedom/core/master/install/motd /etc/motd
 RUN rm /root/.bashrc
-ADD https://raw.githubusercontent.com/jeedom/core/master/install/motd/bashrc /root/.bashrc
+ADD https://raw.githubusercontent.com/jeedom/core/master/install/bashrc /root/.bashrc
 ADD https://raw.githubusercontent.com/jeedom/core/master/install/OS_specific/Docker/supervisord.conf /etc/supervisor/conf.d/supervisord$
 
 ADD https://raw.githubusercontent.com/jeedom/core/master/install/install.sh /root/install_docker.sh
