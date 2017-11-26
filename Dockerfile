@@ -27,7 +27,7 @@ RUN /root/install_docker.sh -s 7;exit 0
 RUN /root/install_docker.sh -s 10;exit 0
 
 # For Openzwave
-RUN mkdir -p /tmp/jeedom/openzwave/dependance
+RUN mkdir -p /tmp/jeedom/openzwave/
 RUN git clone https://github.com/jeedom/plugin-openzwave.git /var/www/html/plugins/openzwave
 RUN chmod +x /var/www/html/plugins/openzwave/resources/install_apt.sh
 RUN /var/www/html/plugins/openzwave/resources/install_apt.sh
