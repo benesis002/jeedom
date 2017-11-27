@@ -19,3 +19,6 @@ RUN chmod +x /var/www/html/plugins/homebridge/resources/install_homebridge.sh
 RUN /var/www/html/plugins/homebridge/resources/install_homebridge.sh
 RUN mkdir -p /var/www/html/plugins/homebridge/data && \
   chown -R www-data.www-data /var/www/html/plugins/homebridge/data
+
+echo "service dbus start" >> /root/init.sh
+echo "avahi-daemon &" >> /root/init.sh
