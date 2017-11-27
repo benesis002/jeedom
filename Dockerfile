@@ -12,3 +12,10 @@ RUN chmod +x /var/www/html/plugins/openzwave/resources/install_apt.sh
 RUN /var/www/html/plugins/openzwave/resources/install_apt.sh
 RUN mkdir -p /var/www/html/plugins/openzwave/data && \
   chown -R www-data.www-data /var/www/html/plugins/openzwave/data
+
+#For Homebridge
+RUN git clone https://github.com/benesis002/jeedom-rpi.git /var/www/html/plugins/homebridge
+RUN chmod +x /var/www/html/plugins/homebridge/resources/install_homebridge.sh
+RUN /var/www/html/plugins/homebridge/resources/install_homebridge.sh
+RUN mkdir -p /var/www/html/plugins/homebridge/data && \
+  chown -R www-data.www-data /var/www/html/plugins/homebridge/data
