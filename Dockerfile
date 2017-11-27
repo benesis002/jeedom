@@ -2,6 +2,9 @@ FROM debian:latest
 
 MAINTAINER benesis002@outlook.com
 
+RUN apt-get update
+RUN apt-get -y dist-upgrade
+
 ENV SHELL_ROOT_PASSWORD Mjeedom96
 
 RUN apt-get update && apt-get install -y wget openssh-server supervisor mysql-client
