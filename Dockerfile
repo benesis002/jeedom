@@ -2,16 +2,10 @@ FROM jeedom/jeedom:latest
 
 MAINTAINER benesis002@outlook.com
 
-RUN apt-get update
-RUN apt-get -y dist-upgrade
+RUN apt-get update && apt-get -y dist-upgrade && rm -rf /var/lib/apt/lists
 
 # For Openzwave
-RUN mkdir -p /tmp/jeedom/openzwave/
-RUN git clone https://github.com/jeedom/plugin-openzwave.git /var/www/html/plugins/openzwave
-RUN chmod +x /var/www/html/plugins/openzwave/resources/install_apt.sh
-RUN /var/www/html/plugins/openzwave/resources/install_apt.sh
-RUN mkdir -p /var/www/html/plugins/openzwave/data && \
-  chown -R www-data.www-data /var/www/html/plugins/openzwave/data
+RUN mkdir -p /tmp/jeedom/openzwave/ && git clone https://github.com/jeedom/plugin-openzwave.git /var/www/html/plugins/openzwave && chmod +x /var/www/html/plugins/openzwave/resources/install_apt.sh && /var/www/html/plugins/openzwave/resources/install_apt.sh && mkdir -p /var/www/html/plugins/openzwave/data && chown -R www-data.www-data /var/www/html/plugins/openzwave/data
 
 #For Homebridge
 RUN git clone https://github.com/jeedom/plugin-homebridge.git /var/www/html/plugins/homebridge
